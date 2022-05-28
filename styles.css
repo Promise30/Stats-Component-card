@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root{
+    --font-size: 15px;
+    --very-blue-blue: hsl(233, 47%, 7%);
+    --dark-saturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+    --font-family-1: 'Inter', sans-serif;
+    --font-family2: "Lexend Deca";
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--very-blue-blue);
+    font-size: 15px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.main-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.main-container .container{
+    background-color: var(--dark-saturated-blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem;
+}
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-container{
+    position: relative;
+}
+.image-container::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--soft-violet);
+    opacity: 0.6;
+}
+.description{
+    padding: 15%;
+}
+.heading{
+    font-family: var(--font-family-1);
+    color: var(--white);
+    font-weight: 700;
+    padding-bottom: 22px;
+}
+.heading span{
+    color: var(--soft-violet);
+}
+#subtext{
+    font-family: var(--font-family-1);
+    color: var(--slightly-transparent-white);
+    line-height: 1.8;
+}
+.stats-info{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    font-family: var(--font-family-1);
+}
+.stats-info h2{
+    color: var(--white);
+    font-size: 25px;
+    font-family: 700;
+    margin-bottom: 10px;
+}
+.stats-info p{
+    color: var(--slightly-transparent-white);
+}
+
+@media only screen and (max-width: 425px){
+    body{
+        text-align: center;
+    }
+    .main-container .container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .image-container{
+        order: -1;
+    }
+    .stats-info{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .stats-info div{
+        margin-top: 20px;
+    }
+    #heading{
+        margin-top: 20px;
+    }
+}
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); 
+}
